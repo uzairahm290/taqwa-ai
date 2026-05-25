@@ -1,24 +1,65 @@
 {
   "expo": {
-    "name": "mizan-ai",
-    "slug": "mizan-ai",
+    "name": "Taqwa AI",
+    "slug": "taqwa-ai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "ios": {
-      "supportsTablet": true
+    "userInterfaceStyle": "dark",
+    "scheme": "taqwa-ai",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#0A0A0F"
     },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+    "ios": {
+      "bundleIdentifier": "com.yourname.taqwaai",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Taqwa AI uses your location to calculate accurate Islamic prayer times for your city and to detect nearby mosques so you can log your prayers.",
+        "NSMotionUsageDescription": "Taqwa AI uses your device compass to show the Qibla direction toward Mecca."
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.yourname.taqwaai",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location",
+      "expo-sensors",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#C9A84C",
+          "sounds": [
+            "./assets/sounds/azan.mp3"
+          ]
+        }
+      ],
+      "expo-audio",
+      "expo-font",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "994934e5-5f92-4c5e-9f87-1147c371c6ee"
+      }
     }
   }
 }
